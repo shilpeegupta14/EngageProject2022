@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>697354511531-71ciml5c2vs1bcqlpn2pu1nlns5l86hk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.697354511531-71ciml5c2vs1bcqlpn2pu1nlns5l86hk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAghQO36Shizu6GIeptq-omXl50OIQ46oY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>697354511531</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.shilpee-gmail.FaceRecogDeviceSecurity</string>
+	<key>PROJECT_ID</key>
+	<string>facerecogdevicesecurity</string>
+	<key>STORAGE_BUCKET</key>
+	<string>facerecogdevicesecurity.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:697354511531:ios:4a3d8a5f21528f179883ee</string>
+</dict>
+</plist>
