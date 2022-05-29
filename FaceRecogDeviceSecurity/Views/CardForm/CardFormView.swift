@@ -1,9 +1,4 @@
-//
-//  MainView.swift
-//  CardReader
-//
-//  Created by Khalid Asad on 2021-05-06.
-//
+
 
 import Foundation
 import SwiftUI
@@ -120,7 +115,7 @@ public struct CardFormView: View {
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
-        .background(Image("images", bundle: .main).resizable())
+        .background(Color.backgroundColor)
         .edgesIgnoringSafeArea(.all)
     }
 }

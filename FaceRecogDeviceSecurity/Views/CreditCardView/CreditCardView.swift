@@ -1,9 +1,4 @@
-//
-//  CreditCardView.swift
-//  CardReader
-//
-//  Created by Khalid Asad on 2021-05-12.
-//
+
 
 import SwiftUI
 

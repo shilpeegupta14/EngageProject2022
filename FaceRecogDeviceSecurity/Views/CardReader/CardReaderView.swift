@@ -1,10 +1,4 @@
-//
-//  CardReaderView.swift
-//  CardReader
-//
-//  Created by Khalid Asad on 05/06/21.
-//  Copyright © 2021 Khalid Asad. All rights reserved.
-//
+
 import SwiftUI
 import Vision
 import VisionKit

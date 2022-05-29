@@ -39,7 +39,7 @@ class SignupViewController: UITableViewController {
                         if let e=error{
                             print(e.localizedDescription)
                         }else{
-                            self.performSegue(withIdentifier: "HomeViewController", sender: self)
+                            self.performSegue(withIdentifier: "SignupSegueIdentifier", sender: self)
                         }
                     }
                 }

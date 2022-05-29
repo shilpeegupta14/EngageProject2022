@@ -1,9 +1,4 @@
-//
-//  CardFormField.swift
-//  CardReader
-//
-//  Created by Khalid Asad on 2021-05-07.
-//
+
 
 import Combine
 import Foundation

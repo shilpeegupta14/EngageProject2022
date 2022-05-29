@@ -59,7 +59,7 @@ class LoginTableViewController: UITableViewController {
                     print(e)
                 }else{
                     //if authenticated successfully, move to the home view.
-                    self?.performSegue(withIdentifier: "HomeViewController", sender: self)
+                    self?.performSegue(withIdentifier: "LoginSegueIdentifier", sender: self)
                 }
             }
         }

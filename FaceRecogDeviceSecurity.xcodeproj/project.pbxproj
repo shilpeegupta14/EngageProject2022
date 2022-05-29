@@ -36,8 +36,6 @@
 		274217A528408D2400A1F1DF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 274217A428408D2400A1F1DF /* Info.plist */; };
 		274217A728408D3400A1F1DF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 274217A628408D3400A1F1DF /* Info.plist */; };
 		274217B82841461900A1F1DF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 274217B72841461900A1F1DF /* FirebaseAuth */; };
-		274217BA284148FA00A1F1DF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 274217B9284148FA00A1F1DF /* FirebaseStorage */; };
-		274217BC2841490500A1F1DF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 274217BB2841490500A1F1DF /* FirebaseFirestore */; };
 		27455ADB28377D1D004857E5 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27455ADA28377D1D004857E5 /* ContentManager.swift */; };
 		2747E9DE2834C8B600BC93C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E9DD2834C8B600BC93C3 /* HomeViewController.swift */; };
 		2749E29A28312E8300998FEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2749E29928312E8300998FEA /* AppDelegate.swift */; };
@@ -126,8 +124,6 @@
 			files = (
 				270A2DD82841EFE500D5AD70 /* SDWebImageSwiftUI in Frameworks */,
 				274217B82841461900A1F1DF /* FirebaseAuth in Frameworks */,
-				274217BA284148FA00A1F1DF /* FirebaseStorage in Frameworks */,
-				274217BC2841490500A1F1DF /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,9 +144,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		270A2DF42843A1BA00D5AD70 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2749E2CF28312FC800998FEA /* AzureFaceRecognition.swift */,
+				270A2DCE2841EF2300D5AD70 /* AppleMusicAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		270A2DF52843A25200D5AD70 /* MLModels */ = {
+			isa = PBXGroup;
+			children = (
+				270A2DE12841F0F000D5AD70 /* EmotionClassifier2.mlmodel */,
+				270A2DDF2841F0E600D5AD70 /* EmotionClassifier.mlmodel */,
+			);
+			path = MLModels;
+			sourceTree = "<group>";
+		};
+		270A2DF62843A2E900D5AD70 /* HostingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				270A2DE32841F2AE00D5AD70 /* HomeScreen.swift */,
+				270A2DE52841F93200D5AD70 /* DashboardScreen.swift */,
+				27C25E04283FF6C700CA0FF4 /* HostingViewController.swift */,
+			);
+			path = HostingControllers;
+			sourceTree = "<group>";
+		};
+		270A2DF72843A34700D5AD70 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				270A2DD92841F03000D5AD70 /* ImagePicker.swift */,
+				272BDB21283DEB2000ECC18D /* ImageCell.swift */,
+				273EE248283F8FFA00CE69CD /* PhotoCell.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		272BDB61283E6BE000ECC18D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				270A2DDD2841F08B00D5AD70 /* DashboardView.swift */,
+				270A2DD42841EF9800D5AD70 /* EmotionView.swift */,
+				270A2DDB2841F05400D5AD70 /* PlayerView.swift */,
 				272BDB64283E6C4400ECC18D /* CreditCardView */,
 				272BDB63283E6C1D00ECC18D /* CardReader */,
 				272BDB62283E6BEA00ECC18D /* CardForm */,
@@ -188,6 +225,9 @@
 			children = (
 				272BDB66283E6D1100ECC18D /* CardDetails.swift */,
 				272BDB68283E6D6700ECC18D /* ImageTextRecognizable.swift */,
+				270A2DD22841EF6600D5AD70 /* SwiftyJSON.swift */,
+				270A2DD02841EF3E00D5AD70 /* Song.swift */,
+				27455ADA28377D1D004857E5 /* ContentManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,35 +280,20 @@
 		2749E29828312E8300998FEA /* FaceRecogDeviceSecurity */ = {
 			isa = PBXGroup;
 			children = (
-				272BDB6A283E6D9C00ECC18D /* Extensions */,
-				272BDB65283E6CD500ECC18D /* Models */,
-				272BDB61283E6BE000ECC18D /* Views */,
-				2749E2CE28312F1C00998FEA /* Controllers */,
-				2749E2CF28312FC800998FEA /* AzureFaceRecognition.swift */,
-				2747E9DD2834C8B600BC93C3 /* HomeViewController.swift */,
-				270A2DD22841EF6600D5AD70 /* SwiftyJSON.swift */,
-				270A2DD92841F03000D5AD70 /* ImagePicker.swift */,
-				270A2DCE2841EF2300D5AD70 /* AppleMusicAPI.swift */,
-				270A2DE32841F2AE00D5AD70 /* HomeScreen.swift */,
-				270A2DD42841EF9800D5AD70 /* EmotionView.swift */,
-				270A2DDB2841F05400D5AD70 /* PlayerView.swift */,
-				270A2DDF2841F0E600D5AD70 /* EmotionClassifier.mlmodel */,
-				270A2DE12841F0F000D5AD70 /* EmotionClassifier2.mlmodel */,
-				270A2DDD2841F08B00D5AD70 /* DashboardView.swift */,
-				270A2DD02841EF3E00D5AD70 /* Song.swift */,
-				272BDB1F283DE22300ECC18D /* CategoriseViewController.swift */,
-				27455ADA28377D1D004857E5 /* ContentManager.swift */,
-				272BDB21283DEB2000ECC18D /* ImageCell.swift */,
-				273EE248283F8FFA00CE69CD /* PhotoCell.swift */,
 				2749E29928312E8300998FEA /* AppDelegate.swift */,
 				2749E29B28312E8300998FEA /* SceneDelegate.swift */,
-				270A2DE52841F93200D5AD70 /* DashboardScreen.swift */,
+				272BDB65283E6CD500ECC18D /* Models */,
+				272BDB61283E6BE000ECC18D /* Views */,
+				270A2DF72843A34700D5AD70 /* ViewModels */,
+				2749E2CE28312F1C00998FEA /* Controllers */,
+				270A2DF62843A2E900D5AD70 /* HostingControllers */,
+				270A2DF52843A25200D5AD70 /* MLModels */,
+				270A2DF42843A1BA00D5AD70 /* API */,
 				274217AC2840962E00A1F1DF /* Resources */,
-				27C25E04283FF6C700CA0FF4 /* HostingViewController.swift */,
-				2749E29F28312E8300998FEA /* Main.storyboard */,
-				272BDB25283DF6D700ECC18D /* GoogleService-Info.plist */,
+				272BDB6A283E6D9C00ECC18D /* Extensions */,
 				272BDB23283DEDA000ECC18D /* Images */,
-				2749E2A728312E8500998FEA /* LaunchScreen.storyboard */,
+				272BDB25283DF6D700ECC18D /* GoogleService-Info.plist */,
+				27C0A4802843AD0A00A76D7F /* Base.Iproj */,
 				2749E2AA28312E8500998FEA /* Info.plist */,
 				2749E2A228312E8300998FEA /* FaceRecogDeviceSecurity.xcdatamodeld */,
 			);
@@ -299,16 +324,19 @@
 			children = (
 				2749E2DC28313E9600998FEA /* LoginTableViewController.swift */,
 				270688E82833F36A00FA6223 /* SignupViewController.swift */,
-				2749E2D12831315400998FEA /* Core */,
+				2747E9DD2834C8B600BC93C3 /* HomeViewController.swift */,
+				272BDB1F283DE22300ECC18D /* CategoriseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		2749E2D12831315400998FEA /* Core */ = {
+		27C0A4802843AD0A00A76D7F /* Base.Iproj */ = {
 			isa = PBXGroup;
 			children = (
+				2749E2A728312E8500998FEA /* LaunchScreen.storyboard */,
+				2749E29F28312E8300998FEA /* Main.storyboard */,
 			);
-			path = Core;
+			path = Base.Iproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,8 +357,6 @@
 			name = FaceRecogDeviceSecurity;
 			packageProductDependencies = (
 				274217B72841461900A1F1DF /* FirebaseAuth */,
-				274217B9284148FA00A1F1DF /* FirebaseStorage */,
-				274217BB2841490500A1F1DF /* FirebaseFirestore */,
 				270A2DD72841EFE500D5AD70 /* SDWebImageSwiftUI */,
 			);
 			productName = FaceRecogDeviceSecurity;
@@ -870,16 +896,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 274217B62841440F00A1F1DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
-		};
-		274217B9284148FA00A1F1DF /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 274217B62841440F00A1F1DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
-		274217BB2841490500A1F1DF /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 274217B62841440F00A1F1DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 
