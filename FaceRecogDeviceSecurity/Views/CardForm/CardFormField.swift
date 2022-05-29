@@ -1,26 +1,29 @@
 //
 //  CardFormField.swift
-//  FaceRecogDeviceSecurity
+//  CardReader
 //
-//  Created by Shilpee Gupta on 25/05/22.
+//  Created by Khalid Asad on 2021-05-07.
 //
 
-import SwiftUI
 import Combine
 import Foundation
+import SwiftUI
 
 public struct CardFormField: View {
+    
     @Binding var text: String
     @State private var isEditing = false
     
     var onEdit: (() -> Void)?
     
+    //initialised properties of card fields
     var fieldTitle: String
     var isSecure: Bool
     var autocapitalizationType: UITextAutocapitalizationType
     var isCreditCardNumber: Bool
     var isExpiryDate: Bool
     
+    //initialising the card fields
     init(
         fieldTitle: String,
         text: Binding<String>,
@@ -38,7 +41,7 @@ public struct CardFormField: View {
         self.isCreditCardNumber = isCreditCardNumber
         self.isExpiryDate = isExpiryDate
     }
-    
+    //designed the credit card form fields 
     public var body: some View {
         VStack(alignment: .leading) {
             Text(fieldTitle)
@@ -46,6 +49,7 @@ public struct CardFormField: View {
                 .foregroundColor(isEditing ? .red : .primaryColor)
             
             Group {
+                //creating a secure text field
                 if isSecure {
                     SecureField("", text: $text, onCommit: { onEdit?() })
                 } else {
@@ -57,21 +61,6 @@ public struct CardFormField: View {
                             if !isEditing { onEdit?() }
                         }
                     )
-//                        .onReceive(Just(text), perform: { newValue in
-//                            if isCreditCardNumber {
-//                                if [3, 8, 13].contains(text.count) && [4, 9, 15].contains(newValue.count) {
-//                                    self.text = newValue + " "
-//                                } else if [5, 0, 15].contains(newValue.count) && [6, 11, 16].contains(text.count) {
-//                                    self.text = String(newValue.dropLast(1))
-//                                } else {
-//                                    self.text = newValue
-//                                }
-//                            } else if isExpiryDate {
-//                                self.text = newValue
-//                            } else {
-//                                self.text = newValue
-//                            }
-//                        })
                 }
             }
             .font(.system(size: 20, weight: .bold, design: .monospaced))
@@ -86,7 +75,10 @@ public struct CardFormField: View {
 }
 
 //struct CardFormField_Previews: PreviewProvider {
+//
+//    @State var text: String
+//
 //    static var previews: some View {
-//        CardFormField()
+//        CardFormField(fieldTitle: "Card number", text: $text)
 //    }
 //}

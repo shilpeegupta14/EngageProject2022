@@ -1,18 +1,15 @@
 //
-//  ImageTextRecognizable.swift
-//  FaceRecogDeviceSecurity
-//
-//  Created by Shilpee Gupta on 25/05/22.
-//
 
 import Foundation
 import Vision
 import VisionKit
 
+//protocol to conform to Vision Delegate
 public protocol ImageTextRecognizable: VNDocumentCameraViewControllerDelegate { }
 
 public extension ImageTextRecognizable {
     
+    //Performns a text recognition reuest to Vision API and pass the recognized text on the card to parse function.
     func validateImage(image: UIImage?, completion: @escaping (CardDetails?) -> Void) {
         guard let cgImage = image?.cgImage else { return completion(nil) }
         
@@ -41,6 +38,7 @@ public extension ImageTextRecognizable {
         }
     }
     
+    //Parse the recognized texts from the vision API to CardDetails struct and remove the extra words like PLatinum Card etc
     func parseResults(for recognizedText: [String]) -> CardDetails {
         // Credit Card Number
         let creditCardNumber = recognizedText.first(where: { $0.count >= 14 && ["4", "5", "3", "6"].contains($0.first) })

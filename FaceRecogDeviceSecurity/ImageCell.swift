@@ -21,7 +21,7 @@ class ImageCell: UICollectionViewCell {
             imageView.layer.borderColor = unselectedColor
         }
     }
-    
+
     var type: CellType = .square {
         didSet {
             imageView.layer.cornerRadius = type == .round ? frame.width / 2.0 : 0.0

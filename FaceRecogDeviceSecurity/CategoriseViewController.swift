@@ -9,8 +9,8 @@ import UIKit
 
 class CategoriseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     let avatarsSection = 0
     let photosSection = 1
@@ -61,7 +61,7 @@ class CategoriseViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.isUserInteractionEnabled = false
         
         // Find photos that match the selected avatar
-        AzureFaceRecognition.shared.groupSimilars(faceId: person.faceId, faceIds: ContentManager.shared.allPhotosFaceIds) { (faceIds) in
+        AzureFaceRecognition.shared.findSimilars(faceId: person.faceId, faceIds: ContentManager.shared.allPhotosFaceIds) { (faceIds) in
             self.photos = ContentManager.shared.photos(withFaceIds: faceIds)
             self.collectionView.reloadSections([self.photosSection])
             self.collectionView.isUserInteractionEnabled = true

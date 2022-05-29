@@ -2,6 +2,8 @@
 import Foundation
 import SwiftUI
 
+//Some color extensions to add other colors into the Card Scanner Screen
+
 public extension UIColor {
     
     static var darkGrayColor: UIColor {

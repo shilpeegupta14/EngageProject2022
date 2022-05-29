@@ -1,34 +1,38 @@
 //
 //  CardReaderView.swift
-//  FaceRecogDeviceSecurity
+//  CardReader
 //
-//  Created by Shilpee Gupta on 25/05/22.
+//  Created by Khalid Asad on 05/06/21.
+//  Copyright © 2021 Khalid Asad. All rights reserved.
 //
-
 import SwiftUI
 import Vision
 import VisionKit
 
 // Constructed with help from https://augmentedcode.io/2019/07/07/scanning-text-using-swiftui-and-vision-on-ios/
-struct CardReaderView: View, UIViewControllerRepresentable {
+public struct CardReaderView: UIViewControllerRepresentable {
+
     private let completionHandler: (CardDetails?) -> Void
-     
+    
+    //initialising a completion handler
     init(completionHandler: @escaping (CardDetails?) -> Void) {
         self.completionHandler = completionHandler
     }
      
     public typealias UIViewControllerType = VNDocumentCameraViewController
      
+    //starting a camera view for detecting the card
     public func makeUIViewController(context: UIViewControllerRepresentableContext<CardReaderView>) -> VNDocumentCameraViewController {
         let viewController = VNDocumentCameraViewController()
         viewController.delegate = context.coordinator
         return viewController
     }
-     
+     //updates the UI
     public func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: UIViewControllerRepresentableContext<CardReaderView>) {
         
     }
-     
+    
+    //coordinator to pass the completion handler to CardView screen and notify on performing completion of the scanning.
     public func makeCoordinator() -> Coordinator {
         Coordinator(completionHandler: completionHandler)
     }
@@ -39,7 +43,7 @@ struct CardReaderView: View, UIViewControllerRepresentable {
         init(completionHandler: @escaping (CardDetails?) -> Void) {
             self.completionHandler = completionHandler
         }
-         
+        //finishing the scan and validating image
         public func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
             print("Document camera view controller did finish with ", scan)
             let image = scan.imageOfPage(at: 0)
@@ -47,20 +51,14 @@ struct CardReaderView: View, UIViewControllerRepresentable {
                 self.completionHandler(cardDetails)
             }
         }
-         
+         //cancel the scan
         public func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
             completionHandler(nil)
         }
-         
+         //error handling for failing to scan screen
         public func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
             print("Document camera view controller did finish with error ", error)
             completionHandler(nil)
         }
     }
 }
-
-//struct CardReaderView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardReaderView()
-//    }
-//}

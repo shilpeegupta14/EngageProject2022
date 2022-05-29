@@ -1,8 +1,8 @@
 //
 //  CreditCardView.swift
-//  FaceRecogDeviceSecurity
+//  CardReader
 //
-//  Created by Shilpee Gupta on 25/05/22.
+//  Created by Khalid Asad on 2021-05-12.
 //
 
 import SwiftUI
@@ -12,6 +12,8 @@ public struct CreditCardView: View {
     var backgroundColors: [Color]
     var textColor: Color
     
+    //Binding properties of the card.
+    //Binding property wrapper is used for state management of the card details
     @Binding var cardNumber: String
     @Binding var cardExpiryDate: String
     @Binding var cardName: String
@@ -29,6 +31,7 @@ public struct CreditCardView: View {
         .init(number: formattedCardNumber.replacingOccurrences(of: " ", with: ""))
     }
     
+    //initialise the color and card Details on the screen
     public init(backgroundColors: [Color] = [.red, .orange], textColor: Color = .white, cardNumber: Binding<String>, cardExpiryDate: Binding<String>, cardName: Binding<String>) {
         self.backgroundColors = backgroundColors
         self.textColor = textColor
@@ -41,12 +44,13 @@ public struct CreditCardView: View {
         VStack(alignment: .leading) {
             Spacer()
             Spacer()
-            
-            Image("chip", bundle: .module)
+            // creating a card image on the screen
+            Image("chip", bundle: .main)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, height: 60)
             
+            //adding data and designing the card.
             Text(formattedCardNumber)
                 .font(.system(size: 26, weight: .bold, design: .monospaced))
             
@@ -86,17 +90,3 @@ public struct CreditCardView: View {
         .frame(width: 340, height: 200, alignment: .center)
     }
 }
-
-//struct CreditCardView_Previews: PreviewProvider {
-//   copied
-//    static var previews: some View {
-//        CreditCardView()
-//    }
-//}
-
-
-//struct CreditCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CreditCardView()
-//    }
-//}
