@@ -67,7 +67,6 @@ Thus ensuring a smooth User experience while making a safe transaction from a fa
     
 ## Languages used
  - Swift
- - SwiftUI
  
 ## APIs used:
  - Microsoft Azure Face API
@@ -76,6 +75,7 @@ Thus ensuring a smooth User experience while making a safe transaction from a fa
  
 ## Frameworks used:
  - VisionKit 
+ - SwiftUI
  - LocalAuthentication
  - StoreKit
  - MediaPlayer
@@ -146,7 +146,14 @@ Thus ensuring a smooth User experience while making a safe transaction from a fa
   card image, I have used state manangement with use of SwiftUI. 
 
 ## Challenges faced:
-- One major application of face recognition is face authentication. At the beginning, my approach was to store facial features, along with email id and password. So when a user tries to login through face authentication, the encoding from the input face will be checked with all the faces stored in the database. But, the latency will be higher for finding the results from 1: K matching problems. There will be approximately a O(N) time complexity for finding the right match. To improvise on the performance, I thought to add a tensorflow backend by doing interoperabilty with Objective C headers. But this process was being code heavy and complex for me. I looked for more simpler alternatives and come to an approach of finding similar faces of the input face from the database of stored credentials. But again, this was taking time to load the screen, sometimes black out and freezes the UI. To make things more simpler, I resorted to FaceID integration into my app by using LocalAuthentication framework in Swift.  
+- One major application of face recognition is face authentication. At the beginning, my approach was to store facial features, along with email id
+and password. So when a user tries to login through face authentication, the encoding from the input face will be checked with all the faces stored 
+in the database. But, the latency will be higher for finding the results from 1: K matching problems. There will be approximately a O(N) time 
+complexity for finding the right match. To improvise on the performance, I thought to add a tensorflow backend by doing interoperabilty with 
+Objective C headers. But this process was being code heavy and complex for me. I looked for more simpler alternatives and come to an approach of 
+finding similar faces of the input face from the database of stored credentials. But again, this was taking time to load the screen, sometimes 
+black out and freezes the UI. To make things more simpler, I resorted to FaceID integration into my app by using LocalAuthentication framework 
+in Swift.  
 
 ## Accomplishments that I am proud of:
 - Linking SwiftUI screens with UIKit and using both the frameworks by the use of Hosting View Controllers.  
