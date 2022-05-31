@@ -1,4 +1,11 @@
 # Face Recog iOS 15 App
+
+## Synopsis
+An iOS app that recognises emotions from the face and recommends songs based on the emotion 
+detected. It gives the users with an emotion analysis from their face. It categorises similar 
+faces with help of Microsoft Azure's Face API and the end users can search the photos by the 
+face of people. This face verified protected account also provides a platform for safe 
+transaction by auto-filling the card details.  
  	            
 ## Overview:
 A native iOS face recognition app that demonstrates the application of face recognition 
