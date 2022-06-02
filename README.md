@@ -47,6 +47,8 @@ on the user interface is changed after scanning.
 This is implemented by state management of the text fields by the use of SwiftUI. 
 Thus ensuring a smooth User experience while making a safe transaction from a face verified account. 
 
+Note: The app doesnt do any actual payment. It is purely based on an idea and is shown as a prototype.
+
 ## Installation process and other Prerequistes to know
   - Open Xcode and click on "Clone an existing project"
   ![alt text](https://github.com/shilpeegupta14/images/blob/main/Screenshot%202022-05-31%20at%207.03.38%20PM.png?raw=true)
@@ -152,7 +154,7 @@ in the database. But, the latency will be higher for finding the results from 1:
 complexity for finding the right match. To improvise on the performance, I thought to add a tensorflow backend by doing interoperabilty with 
 Objective C headers. But this process was being code heavy and complex for me. I looked for more simpler alternatives and come to an approach of 
 finding similar faces of the input face from the database of stored credentials. But again, this was taking time to load the screen, sometimes 
-black out and freezes the UI. To make things more simpler, I resorted to FaceID integration into my app by using LocalAuthentication framework 
+black out and freezes the UI. To make things more simpler and faster, I resorted to FaceID integration into my app by using LocalAuthentication framework 
 in Swift.  
 
 ## Accomplishments that I am proud of:
