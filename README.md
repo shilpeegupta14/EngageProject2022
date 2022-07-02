@@ -81,8 +81,6 @@ Note: The app doesnt do any actual payment. It is purely based on an idea and is
  - LocalAuthentication
  - StoreKit
  - MediaPlayer
- - CoreML
- - Combine
  - PhotosUI
  
 ## Tools used:
