@@ -3,7 +3,7 @@
 import StoreKit
 
 class AppleMusicAPI {
-    let developerToken = "MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgjelADPOFmLbIv93J xo6q0nt9szXiWMO8niuSNjV2HzWgCgYIKoZIzj0DAQehRANCAARdox+F88QErvF5 usDeezZLvBUkwqnqZImE06UbMUtKE15/jdh6PAO8wGmRJ27cOV9X5A9DG53PRenK97xCvXvQ"
+    let developerToken = ""
     let controller = SKCloudServiceController()
     
     func searchAppleMusic(_ searchTerm: String!, completion: @escaping ([Song]) -> ()) {
