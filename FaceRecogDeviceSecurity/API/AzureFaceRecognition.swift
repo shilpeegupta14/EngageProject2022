@@ -8,7 +8,7 @@
 
 import UIKit
 
-let APIKey = "776d8d853e1641cd8c1389bba4234618" // Ocp-Apim-Subscription-Key
+let APIKey = "" // Ocp-Apim-Subscription-Key
 let Region = "eastus"
 let FindSimilarsUrl = "https://\(Region).api.cognitive.microsoft.com/face/v1.0/findsimilars"
 let DetectUrl = "https://\(Region).api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true"
