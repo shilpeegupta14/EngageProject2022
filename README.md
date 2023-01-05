@@ -1,5 +1,7 @@
 # Face Recog iOS 15 App
 
+Note: The project is in master branch.
+
 ## Synopsis
 An iOS app that recognises emotions from the face and recommends songs based on the emotion 
 detected. It gives the users a dashboard view of the emotion analysis from their face. It categorises similar 
